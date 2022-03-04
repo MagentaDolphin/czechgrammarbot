@@ -65,7 +65,7 @@ def MessageVzor(message, vzor: vzors):
               vzor[vzorNum][padNum])
 
         if message.text == "/stop":
-            bot.send_message(message.from_user.id, str("Correct:\n" + " nebo ".join(vzor[vzorNum][0])))
+            bot.send_message(message.from_user.id, str("Correct:\n" + " nebo ".join(vzor[vzorNum][padNum])))
             keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
             buttons = ["/vzor", "/help"]
             keyboard.add(*buttons)
