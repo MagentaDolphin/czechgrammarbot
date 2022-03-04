@@ -2,7 +2,8 @@ import telebot
 import random
 from telebot import types
 
-bot = telebot.TeleBot('5246673155:AAG3hN08mtWUVSStY-uMJMfObPBx4psQhdM')
+#bot = telebot.TeleBot('5246673155:AAG3hN08mtWUVSStY-uMJMfObPBx4psQhdM')
+bot = telebot.TeleBot('5288395945:AAFLWZLrcqIHrbjM-wwdgxL1F4zLegwgs6g')
 
 vzors = [[["pán"], ["pána"], ["pánovi", "pánu"], ["pána"], ["pane"], ["pánovi", "pánu"], ["pánem"]],
          [["muž"], ["muže"], ["mužovi", "mužu"], ["muže"], ["muži"], ["mužovi", "mužu"], ["mužem"]],
@@ -49,6 +50,7 @@ adjektiv = [[["mladý (m.a.) (sg.)"], ["mladého"], ["mladému"], ["mladého"], 
          [["jarní (m.i.) (pl.)"], ["jarních"], ["jarním"], ["jarní"], ["jarní"], ["jarních"], ["jarními"]],
          [["jarní (f) (pl.)"], ["jarních"], ["jarním"], ["jarní"], ["jarní"], ["jarních"], ["jarními"]],
          [["jarní (n) (pl.)"], ["jarních"], ["jarním"], ["jarní"], ["jarní"], ["jarních"], ["jarními"]]]
+
 
 padList = ["NOMINATIV", "GENITIV", "DATIV", "AKUZATIV", "VOKATIV", "LOKÁL", "INSTRUMENTÁL"]
 
@@ -100,7 +102,7 @@ def MessageVzor(message, vzor: vzors):
 
 def CheangeVzorVariant(message):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    buttons = ["Substantiv", "Adjektiv"]
+    buttons = ["Substantiv", "Adjektiv", "Zajmeny"]
     keyboard.add(*buttons)
     bot.send_message(message.from_user.id, "Vyberte jednu z možností", reply_markup=keyboard)
     bot.register_next_step_handler(message, GetVzorVarriant)
@@ -111,6 +113,8 @@ def GetVzorVarriant(message):
         MessageVzor(message, vzors)
     elif message.text == "Adjektiv":
         MessageVzor(message, adjektiv)
+  #  elif message.text == "Zajmeny":
+   #     MessageVzor(message, zaymeny)
     else:
         return
 
