@@ -2,7 +2,7 @@ import telebot
 import random
 from telebot import types
 
-bot = telebot.TeleBot('5288395945:AAFLWZLrcqIHrbjM-wwdgxL1F4zLegwgs6g')
+bot = telebot.TeleBot('5246673155:AAG3hN08mtWUVSStY-uMJMfObPBx4psQhdM')
 
 vzors = [[["pán"], ["pána"], ["pánovi", "pánu"], ["pána"], ["pane"], ["pánovi", "pánu"], ["pánem"]],
          [["muž"], ["muže"], ["mužovi", "mužu"], ["muže"], ["muži"], ["mužovi", "mužu"], ["mužem"]],
