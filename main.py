@@ -136,7 +136,7 @@ def get_text_messages(message):
     elif message.text == "/help":
         bot.send_message(message.from_user.id, " 1) /vzor pro opakovani padu" + "\n" + "2) ...")
     elif message.text == "/start":
-        bot.send_message(message.from_user.id, "Hello world)!", reply_markup=keyboard)
+        bot.send_message(message.from_user.id, "Co chtete?", reply_markup=keyboard)
     else:
         bot.send_message(message.from_user.id, "Nemuzu pochopit. Pokusite se napsat /help.", reply_markup=keyboard)
 
