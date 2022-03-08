@@ -160,7 +160,7 @@ def MessageVzor(message, vzor: vzors):
 def CheangeVzorVariant(message):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     buttons = ["Substantiv", "Adjektiv", "Zajmeny", "Posesiv"]
-    keyboard.add(*buttons)
+    keyboard.add(*buttons, row_width=2)
     bot.send_message(message.from_user.id, "Vyberte jednu z možností", reply_markup=keyboard)
     bot.register_next_step_handler(message, GetVzorVarriant)
 
