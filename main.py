@@ -19,19 +19,19 @@ vzors = [[["pán"], ["pána"], ["pánovi", "pánu"], ["pána"], ["pane"], ["pán
          [["moře"], ["moře"], ["moři"], ["moře"], ["moře"], ["moři"], ["mořem"]],
          [["kuře"], ["kuřete"], ["kuřeti"], ["kuře"], ["kuře"], ["kuřeti"], ["kuřetem"]],
          [["stavení"], ["stavení"], ["stavení"], ["stavení"], ["stavení"], ["stavení"], ["stavením"]],
-         [["páni"], ["pánů"], ["pánům"], ["pány"], ["páni"], ["pánech"], ["pány"]],
-         [["muži"], ["mužů"], ["mužům"], ["muže"], ["muži"], ["mužích"], ["muži"]],
-         [["předsedové"], ["předsedů"], ["předsedům"], ["předsedy"], ["předsedové"], ["předsedech"], ["předsedy"]],
-         [["soudci"], ["soudců"], ["soudcům"], ["soudce"], ["soudci"], ["soudcích"], ["soudci"]],
-         [["hrady"], ["hradů"], ["hradům"], ["hrady"], ["hrady"], ["hradech"], ["hrady"]],
-         [["stroje"], ["strojů"], ["strojům"], ["stroje"], ["stroje"], ["strojích"], ["stroji"]],
-         [["ženy"], ["žen"], ["ženám"], ["ženy"], ["ženy"], ["ženách"], ["ženami"]],
+         [["páni (pl.)"], ["pánů"], ["pánům"], ["pány"], ["páni"], ["pánech"], ["pány"]],
+         [["muži (pl.)"], ["mužů"], ["mužům"], ["muže"], ["muži"], ["mužích"], ["muži"]],
+         [["předsedové (pl.)"], ["předsedů"], ["předsedům"], ["předsedy"], ["předsedové"], ["předsedech"], ["předsedy"]],
+         [["soudci (pl.)"], ["soudců"], ["soudcům"], ["soudce"], ["soudci"], ["soudcích"], ["soudci"]],
+         [["hrady (pl.)"], ["hradů"], ["hradům"], ["hrady"], ["hrady"], ["hradech"], ["hrady"]],
+         [["stroje (pl.)"], ["strojů"], ["strojům"], ["stroje"], ["stroje"], ["strojích"], ["stroji"]],
+         [["ženy (pl.)"], ["žen"], ["ženám"], ["ženy"], ["ženy"], ["ženách"], ["ženami"]],
          [["růže (pl.)"], ["růží"], ["růžím"], ["růže"], ["růže"], ["růžích"], ["růžemi"]],
-         [["písně"], ["písní"], ["písním"], ["písně"], ["písně"], ["písních"], ["písněmi"]],
-         [["kosti"], ["kosti"], ["kostem"], ["kosti"], ["kosti"], ["kostech"], ["kostmi"]],
-         [["města"], ["měst"], ["městům"], "města", "města", "městech", "městy"],
+         [["písně (pl.)"], ["písní"], ["písním"], ["písně"], ["písně"], ["písních"], ["písněmi"]],
+         [["kosti (pl.)"], ["kostí"], ["kostem"], ["kosti"], ["kosti"], ["kostech"], ["kostmi"]],
+         [["města (pl.)"], ["měst"], ["městům"], "města", "města", "městech", "městy"],
          [["moře (pl.)"], ["moří"], ["mořím"], ["moře"], ["moře"], ["mořích"], ["moři"]],
-         [["kuřata"], ["kuřat"], ["kuřatům"], ["kuřata"], ["kuřata"], ["kuřatech"], ["kuřaty"]],
+         [["kuřata (pl.)"], ["kuřat"], ["kuřatům"], ["kuřata"], ["kuřata"], ["kuřatech"], ["kuřaty"]],
          [["stavení (pl.)"], ["stavení"], ["stavením"], ["stavení"], ["stavení"], ["staveních"], ["staveními"]]]
 
 adjektiv = [[["mladý (m.a.) (sg.)"], ["mladého"], ["mladému"], ["mladého"], ["mladý"], ["mladém"], ["mladým"]],
@@ -134,7 +134,7 @@ def get_text_messages(message):
         CheangeVzorVariant(message)
 
     elif message.text == "/help":
-        bot.send_message(message.from_user.id, " 1) /vzor pro opakovani padu" + "\n" + "2) ...")
+        bot.send_message(message.from_user.id, " 1) /vzor pro opakovani padu" + "\n" + "2) /stop pro zastavení tréninku" + "\n" + "3) /skip pro přeskočení vzoru")
     elif message.text == "/start":
         bot.send_message(message.from_user.id, "Co chtete?", reply_markup=keyboard)
     else:
