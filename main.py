@@ -2,27 +2,27 @@ import telebot
 import random
 from telebot import types
 
-bot = telebot.TeleBot('5246673155:AAG3hN08mtWUVSStY-uMJMfObPBx4psQhdM')
-#bot = telebot.TeleBot('5288395945:AAFLWZLrcqIHrbjM-wwdgxL1F4zLegwgs6g')
+bot = telebot.TeleBot('5246673155:AAG3hN08mtWUVSStY-uMJMfObPBx4psQhdM') #main
+#bot = telebot.TeleBot('5288395945:AAFLWZLrcqIHrbjM-wwdgxL1F4zLegwgs6g') #test
 
 vzors = [[["pán (sg.)"], ["pána"], ["pánovi", "pánu"], ["pána"], ["pane"], ["pánovi", "pánu"], ["pánem"]],
-         [["muž (sg.)"], ["muže"], ["mužovi", "mužu"], ["muže"], ["muži"], ["mužovi", "mužu"], ["mužem"]],
+         [["muž (sg.)"], ["muže"], ["mužovi", "muži"], ["muže"], ["muži"], ["mužovi", "muži"], ["mužem"]],
          [["předseda (sg.)"], ["předssedy"], ["předsedovi"], ["předsedu"], ["předsedo"], ["předsedovi"], ["předsedou"]],
          [["soudce (sg.)"], ["soudce"], ["soudcovi"], ["soudce"], ["soudce"], ["soudcovi"], ["soudcem"]],
          [["hrad (sg.)"], ["hradu"], ["hradu"], ["hrad"], ["hrade"], ["hradu"], ["hradem"]],
          [["stroj (sg.)"], ["stroje"], ["stroji"], ["stroj"], ["stroji"], ["stroji"], ["strojem"]],
          [["žena (sg.)"], ["ženy"], ["ženě"], ["ženu"], ["ženo"], ["ženě"], ["ženou"]],
          [["růže (sg.)"], ["růže"], ["růží"], ["růže"], ["růže"], ["růži"], ["růží"]],
-         [["píseň (sg.)"], ["písně"], ["písni"], ["píseň"], ["písni"], ["písní"], ["písní"]],
+         [["píseň (sg.)"], ["písně"], ["písni"], ["píseň"], ["písni"], ["písni"], ["písní"]],
          [["kost (sg.)"], ["kosti"], ["kosti"], ["kost"], ["kosti"], ["kosti"], ["kostí"]],
          [["město (sg.)"], ["města"], ["městu"], ["město"], ["město"], ["městu"], ["městem"]],
          [["moře (sg.)"], ["moře"], ["moři"], ["moře"], ["moře"], ["moři"], ["mořem"]],
          [["kuře (sg.)"], ["kuřete"], ["kuřeti"], ["kuře"], ["kuře"], ["kuřeti"], ["kuřetem"]],
          [["stavení (sg.)"], ["stavení"], ["stavení"], ["stavení"], ["stavení"], ["stavení"], ["stavením"]],
-         [["páni (pl.)"], ["pánů"], ["pánům"], ["pány"], ["páni"], ["pánech"], ["pány"]],
-         [["muži (pl.)"], ["mužů"], ["mužům"], ["muže"], ["muži"], ["mužích"], ["muži"]],
+         [["páni (pl.)"], ["pánů"], ["pánům"], ["pány"], ["páni","pánové"], ["pánech"], ["pány"]],
+         [["muži (pl.)"], ["mužů"], ["mužům"], ["muže"], ["muži","mužové"], ["mužích"], ["muži"]],
          [["předsedové (pl.)"], ["předsedů"], ["předsedům"], ["předsedy"], ["předsedové"], ["předsedech"], ["předsedy"]],
-         [["soudci (pl.)"], ["soudců"], ["soudcům"], ["soudce"], ["soudci"], ["soudcích"], ["soudci"]],
+         [["soudci (pl.)"], ["soudců"], ["soudcům"], ["soudce"], ["soudci","soudcové"], ["soudcích"], ["soudci"]],
          [["hrady (pl.)"], ["hradů"], ["hradům"], ["hrady"], ["hrady"], ["hradech"], ["hrady"]],
          [["stroje (pl.)"], ["strojů"], ["strojům"], ["stroje"], ["stroje"], ["strojích"], ["stroji"]],
          [["ženy (pl.)"], ["žen"], ["ženám"], ["ženy"], ["ženy"], ["ženách"], ["ženami"]],
@@ -210,7 +210,7 @@ def get_text_messages(message):
         CheangeVzorVariant(message)
 
     elif message.text == "/help":
-        bot.send_message(message.from_user.id, " 1) /vzor pro opakovani padu" + "\n" + "2) /stop pro zastavení tréninku" + "\n" + "3) /skip pro přeskočení vzoru")
+        bot.send_message(message.from_user.id, " 1) /vzor pro opakovani padu" + "\n" + "2) /stop pro zastavení tréninku" + "\n" + "3) /skip pro přeskočení vzoru" + "\n" + "(sg.) - singulár, (pl.) - plurál" + "\n" + "m.i. - Maskulinum inanimata" + "\n" + "m.a. - Maskulinum animata" + "\n" + "f - Feminina, n - Neutra" + "\n" + "Hledejte víc možností při odpovědi!")
     elif message.text == "/start":
         bot.send_message(message.from_user.id, "Co chtete?", reply_markup=keyboard)
     else:
